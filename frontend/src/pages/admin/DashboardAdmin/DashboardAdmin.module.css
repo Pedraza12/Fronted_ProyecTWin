@@ -1,0 +1,5 @@
+.page{display:flex;flex-direction:column;gap:var(--sp-6)}
+.motorChips{display:flex;gap:var(--sp-2_5);flex-wrap:wrap}
+.panelLink{font-size:var(--text-sm);font-weight:600;color:var(--c-primary);text-decoration:none}
+.panelLink:hover{text-decoration:underline}
+/* El layout compacto del panel de acciones vive en QuickActions (variant="stack"). */

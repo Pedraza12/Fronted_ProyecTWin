@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════
+   FormularioBase.module.css — patrones de formulario compartidos
+   ═══════════════════════════════════════════════ */
+
+/* ── Form container ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  max-width: 720px;
+}
+
+/* ── Two-column grid (responsive) ── */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+
+/* ── Actions row (envuelve cuando no caben los botones) ── */
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  row-gap: var(--sp-2);
+  padding-top: var(--sp-2);
+}
+
+/* ── Helper text below field ── */
+.hint {
+  margin: calc(var(--sp-1) * -1) 0 0;
+  font-size: var(--text-xs);
+  color: var(--c-text-3);
+}
+
+/* ── Inline chip list (companion selectors, tags, etc.) ── */
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: var(--sp-1_5) var(--sp-3);
+  border-radius: var(--r-full);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.chip:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+
+.chipActive {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+  color: var(--c-on-primary);
+  box-shadow: var(--glow-soft);
+}
+
+.chipActive:hover {
+  background: var(--c-primary-strong);
+  border-color: var(--c-primary-strong);
+  color: var(--c-on-primary);
+}
+
+@media (min-width: 768px) {
+  .grid2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Selección de aprendices al crear una ficha (admin) */
+.grupoAprendices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1_5);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.leyendaAprendices {
+  padding: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: var(--leading-normal);
+}
+
+.ayudaAprendices {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--c-text-3);
+  line-height: var(--leading-normal);
+}
+
+.listaAprendices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+
+.aprendizItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  font-size: var(--text-sm);
+}
+
+.aprendizItem:hover {
+  background: var(--c-chip-hover);
+}
